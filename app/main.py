@@ -22,6 +22,11 @@ app.include_router(projects.router)
 app.include_router(tasks.router)
 
 
+@app.get("/")
+def root():
+    return {"message": "API is running 🚀"}
+
+
 @app.get("/health", tags=["Health"])
 async def health_check():
     return {"status": "ok"}
