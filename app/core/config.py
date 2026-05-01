@@ -6,7 +6,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     app_name: str = "Team Task Manager API"
     environment: str = "development"
-    mongodb_uri: str = "mongodb://localhost:27017"
+    mongo_url: str = "mongodb://localhost:27017"
     mongodb_db_name: str = "team_task_manager"
     jwt_secret_key: str
     jwt_algorithm: str = "HS256"

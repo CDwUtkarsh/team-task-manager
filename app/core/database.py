@@ -12,7 +12,7 @@ mongodb = MongoDB()
 
 
 async def connect_to_mongo() -> None:
-    mongodb.client = AsyncIOMotorClient(settings.mongodb_uri)
+    mongodb.client = AsyncIOMotorClient(settings.mongo_url)
     mongodb.database = mongodb.client[settings.mongodb_db_name]
 
     await mongodb.database.users.create_index("email", unique=True)
